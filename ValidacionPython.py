@@ -1,12 +1,18 @@
-contraseña = "Retoexamen"
-tarjeta = "1234 6772 2727 9912"
-numero=int(3)
-for i in range(numero):
-  usuario_res = input("Cual es tu contraseña? ")
-  
-if usuario_res != contraseña:
-    print("Se ha excedido el numero de intentos")
-else:
-    print("**** **** **** 9912")
+def validar_contrasena():
+    contrasena_correcta = "contrasena123"
+    numero_tarjeta = "1234567890123456"
+    intentos = 0
+    while intentos < 3:
+        contrasena = input("Introduce la contraseña: ")
+        if contrasena == contrasena_correcta:
+            return "Número de tarjeta: " + "*" * 12 + numero_tarjeta[-4:]
+        else:
+            print("Contraseña incorrecta. Intenta de nuevo.")
+            intentos += 1
+    return "Se ha excedido el número de intentos."
+
+resultado = validar_contrasena()
+
+print(resultado)
 
 
